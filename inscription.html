@@ -1,63 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <link rel="stylesheet" href="sitedevoyage.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 320px;
-        }
-        .container h2 {
-            text-align: center;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .form-group input, .form-group select {
-            width: 95%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .date-container {
-            display: flex;
-            justify-content: space-between;
-        }
-        .date-container select {
-            width: 32%;
-        }
-        .btn {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #FFA41C;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .btn:hover {
-            background-color: #e6951c;
-        }
-    </style>
 </head>
+
 <body>
     <header>
         <div class="header-container">
@@ -73,81 +22,87 @@
                 <a href="présprojet.html" class="btn-nav">Qui sommes-nous?</a>
             </nav>
             <div class="header-auth">
-                <a href="inscription.html" class="btn btn-primary">Se connecter</a>
+                <a href="connecter.html" class="btn btn-primary">Se connecter</a>
                 <p class="small-text">Nouveau client ? <a href="inscription.html">S'inscrire</a></p>
             </div>
         </div>
     </header>
-    <div class="container">
-        <h2>Inscription</h2>
-        <form>
-            <div class="form-group">
-                <label for="nom">Nom</label>
-                <input type="text" id="nom" name="nom" required>
-            </div>
-            <div class="form-group">
-                <label for="prenom">Prénom</label>
-                <input type="text" id="prenom" name="prenom" required>
-            </div>
-            <div class="form-group">
-                <label for="sexe">Sexe</label>
-                <select id="sexe" name="sexe" required>
-                    <option value="">Sélectionner</option>
-                    <option value="Homme">Homme</option>
-                    <option value="Femme">Femme</option>
-                    <option value="Autre">Autre</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="telephone">Numéro de téléphone</label>
-                <input type="tel" id="telephone" name="telephone" required>
-            </div>
-            <div class="form-group">
-                <label for="date_naissance">Date de naissance</label>
-                <div class="date-container">
-                    <select id="jour" name="jour" required>
-                        <option value="">Jour</option>
-                        <!-- Options pour les jours -->
-                        <script>
-                            for (let i = 1; i <= 31; i++) {
-                                document.write(`<option value="${i}">${i}</option>`);
-                            }
-                        </script>
-                    </select>
-                    <select id="mois" name="mois" required>
-                        <option value="">Mois</option>
-                        <option value="1">Janvier</option>
-                        <option value="2">Février</option>
-                        <option value="3">Mars</option>
-                        <option value="4">Avril</option>
-                        <option value="5">Mai</option>
-                        <option value="6">Juin</option>
-                        <option value="7">Juillet</option>
-                        <option value="8">Août</option>
-                        <option value="9">Septembre</option>
-                        <option value="10">Octobre</option>
-                        <option value="11">Novembre</option>
-                        <option value="12">Décembre</option>
-                    </select>
-                    <select id="annee" name="annee" required>
-                        <option value="">Année</option>
-                        <!-- Options pour les années -->
-                        <script>
-                            let anneeActuelle = new Date().getFullYear();
-                            for (let i = anneeActuelle; i >= 1900; i--) {
-                                document.write(`<option value="${i}">${i}</option>`);
-                            }
-                        </script>
+
+    <center>
+        <div class="container">
+            <h2>Formulaire d'inscription</h2>
+            <form action="inscription.php" method="post">
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </div>
+                <div class="form-group">
+                    <label for="sexe">Sexe</label>
+                    <select id="sexe" name="sexe" required>
+                        <option value="">Sélectionner</option>
+                        <option value="Homme">Homme</option>
+                        <option value="Femme">Femme</option>
+                        <option value="Autre">Autre</option>
                     </select>
                 </div>
-            </div>
-            <button type="submit" class="btn">S'inscrire</button>
-        </form>
-    </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Numéro de téléphone</label>
+                    <input type="tel" id="telephone" name="telephone" required>
+                </div>
+                <div class="form-group">
+                    <label for="mot_de_passe">Mot de passe</label>
+                    <input type="password" id="mot_de_passe" name="mot_de_passe" required>
+                </div>
+                <div class="form-group">
+                    <label for="date_naissance">Date de naissance</label>
+                    <div class="date-container">
+                        <select id="jour" name="jour" required>
+                            <option value="">Jour</option>
+                            <script>
+                                for (let i = 1; i <= 31; i++) {
+                                    document.write(`<option value="${i}">${i}</option>`);
+                                }
+                            </script>
+                        </select>
+                        <select id="mois" name="mois" required>
+                            <option value="">Mois</option>
+                            <option value="1">Janvier</option>
+                            <option value="2">Février</option>
+                            <option value="3">Mars</option>
+                            <option value="4">Avril</option>
+                            <option value="5">Mai</option>
+                            <option value="6">Juin</option>
+                            <option value="7">Juillet</option>
+                            <option value="8">Août</option>
+                            <option value="9">Septembre</option>
+                            <option value="10">Octobre</option>
+                            <option value="11">Novembre</option>
+                            <option value="12">Décembre</option>
+                        </select>
+                        <select id="annee" name="annee" required>
+                            <option value="">Année</option>
+                            <script>
+                                let anneeActuelle = new Date().getFullYear();
+                                for (let i = anneeActuelle; i >= 1900; i--) {
+                                    document.write(`<option value="${i}">${i}</option>`);
+                                }
+                            </script>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn">S'inscrire</button>
+            </form>
+        </div>
+    </center>
+
     <footer>
         <p>&copy; 2025 Agence de Voyage de Leo Bouabdallah, Thomas Ribeiro, Jean Moukarzel.<br> Tous droits réservés.</p>
     </footer>
