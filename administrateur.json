@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "login": "admin1",
+        "mot_de_passe": "mot_de_passe_haché",
+        "role": "administrateur",
+        "informations": {
+            "nom": "Admin",
+            "email": "admin1@example.com",
+            "telephone": "0123456789"
+        }
+    }
+]

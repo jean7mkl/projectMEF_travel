@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "login": "johndoe",
+      "mot_de_passe": "abc123",
+      "role": "utilisateur",
+      "informations": {
+        "nom": "John Doe",
+        "email": "johndoe@email.com",
+        "telephone": "0601020304"
+      },
+      "voyages": {
+        "consultes": ["Japon", "Italie"],
+        "achetes": [1001, 1002]
+      }
+    }
+  ]
