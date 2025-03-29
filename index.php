@@ -1,5 +1,5 @@
 <?php
 session_start();
-header("Location: quiz.php");
+header("Location: projet.php");
 exit();
 ?>
