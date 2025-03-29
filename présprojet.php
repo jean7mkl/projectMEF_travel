@@ -1,3 +1,11 @@
+<?php
+session_start();
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,26 +18,26 @@
 <header>
         <div class="header-container">
             <div class="logo-title">
-                <a href="projet.html" class="logo-link">
-                    <img src="Logo.png" alt="Logo Travel4all" class="logo">
+                <a href="projet.php" class="logo-link">
+                    <img src="photo/Logo.png" alt="Logo Travel4all" class="logo">
                 </a>
                 <h1>WHERE2GO</h1>
             </div>
             <nav>
-                <a href="projet.html" class="btn-nav">Notre Accueil</a>
-                <a href="pagequizz.html" class="btn-nav">Découvrir notre concept</a>
-                <a href="présprojet.html" class="btn-nav">Qui sommes-nous?</a>
+                <a href="projet.php" class="btn-nav">Notre Accueil</a>
+                <a href="pagequizz.php" class="btn-nav">Découvrir notre concept</a>
+                <a href="présprojet.php" class="btn-nav">Qui sommes-nous?</a>
             </nav>
             <div class="header-auth">
-                <a href="inscription.html" class="btn btn-primary">Se connecter</a>
-                <p class="small-text">Nouveau client ? <a href="inscription.html">S'inscrire</a></p>
+                <a href="connecter.php" class="btn btn-primary">Se connecter</a>
+                <p class="small-text">Nouveau client ? <a href="inscription.php">S'inscrire</a></p>
             </div>
         </div>
     </header>  
     
 
     <video width="100%" autoplay loop muted>
-        <source src="video.mp4" type="video/mp4">
+        <source src="photo/video.mp4" type="video/mp4">
         Votre navigateur ne supporte pas la lecture de vidéos.
     </video>    
 
@@ -50,12 +58,12 @@
             <a href="#" class="btnpres">Prendre contact avec nous</a>
         </div>
         <div class="image2-right">
-            <img src="pexels-gantas-4484243.jpg" alt="Personne en costume">
+            <img src="photo/pexels-gantas-4484243.jpg" alt="Personne en costume">
         </div>
     </div>
 
     <div class="image2-bottom">
-        <img src="pexels-pixabay-62623.jpg" alt="Vue depuis un avion">
+        <img src="photo/pexels-pixabay-62623.jpg" alt="Vue depuis un avion">
         <div class="inspire2-text">
             <h2>Inspirez-vous</h2>
             <p>Retrouvez-nous sur les réseaux sociaux pour suivre notre actualité et vous inspirer sur les plus belles destinations partout dans le monde.</p>
