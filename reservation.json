@@ -1,21 +1,29 @@
 [
     {
-      "id_reservation": 1001,
-      "id_utilisateur": 1,
-      "destination": "Espagne",
-      "date_depart": "2024-07-10",
-      "date_retour": "2024-07-20",
-      "prix": 1200,
-      "statut": "confirmé"
+        "id_reservation": 1001,
+        "id_utilisateur": 1,
+        "destination": "Espagne",
+        "date_depart": "2024-07-10",
+        "date_retour": "2024-07-20",
+        "prix": 1200,
+        "statut": "confirm\u00e9"
     },
     {
-      "id_reservation": 1002,
-      "id_utilisateur": 1,
-      "destination": "Italie",
-      "date_depart": "2024-08-05",
-      "date_retour": "2024-08-15",
-      "prix": 900,
-      "statut": "en attente"
+        "id_reservation": 1002,
+        "id_utilisateur": 1,
+        "destination": "Italie",
+        "date_depart": "2024-08-05",
+        "date_retour": "2024-08-15",
+        "prix": 900,
+        "statut": "en attente"
+    },
+    {
+        "id_reservation": 1743205987,
+        "id_utilisateur": 8,
+        "destination": "japon",
+        "date_depart": "2025-03-29",
+        "date_retour": "2025-03-30",
+        "prix": 900,
+        "statut": "en attente"
     }
-  ]
-  
+]
