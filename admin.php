@@ -3,7 +3,7 @@ session_start();
 
 // Vérification de l'authentification de l'administrateur
 if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
-    header("Location: connecter.html");
+    header("Location: connecter.php");
     exit();
 }
 
