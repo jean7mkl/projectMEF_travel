@@ -1,30 +1,58 @@
 <?php
 session_start();
-$fichier_utilisateurs = 'utilisateurs.json';
+ob_start(); // Évite les erreurs de redirection
 
-// Vérifier si le formulaire est soumis
+include 'header.php'; // Inclusion du header
+
+$fichiers_utilisateurs = ['utilisateurs.json', 'administrateur.json'];
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST["email"];
+    $email = htmlspecialchars(trim($_POST["email"]));
     $mot_de_passe = $_POST["mot_de_passe"];
 
-    // Charger les utilisateurs
-    if (file_exists($fichier_utilisateurs)) {
-        $utilisateurs = json_decode(file_get_contents($fichier_utilisateurs), true) ?? [];
-        
-        foreach ($utilisateurs as $utilisateur) {
-            if ($utilisateur["informations"]["email"] === $email && password_verify($mot_de_passe, $utilisateur["mot_de_passe"])) {
-                // Connexion réussie -> Stocker en session
-                $_SESSION["login"] = $utilisateur["login"];
-                $_SESSION["nom"] = $utilisateur["informations"]["nom"];
-                
-                // Rediriger vers l'accueil ou le compte
-                header("Location: moncompte.php");
-                exit();
+    if (empty($email) || empty($mot_de_passe)) {
+        $_SESSION['error'] = "Veuillez remplir tous les champs.";
+        header("Location: connecter.php");
+        exit();
+    }
+
+    foreach ($fichiers_utilisateurs as $fichier) {
+        if (file_exists($fichier)) {
+            $utilisateurs = json_decode(file_get_contents($fichier), true);
+
+            if (!is_array($utilisateurs)) continue;
+
+            foreach ($utilisateurs as $utilisateur) {
+                if (
+                    isset($utilisateur["informations"]["email"], $utilisateur["mot_de_passe"]) &&
+                    $utilisateur["informations"]["email"] === $email &&
+                    password_verify($mot_de_passe, $utilisateur["mot_de_passe"])
+                ) {
+                    // ✅ Stocke toutes les infos utiles dans la session
+                    $_SESSION["login"] = $utilisateur["login"];
+                    $_SESSION["nom"] = $utilisateur["informations"]["nom"];
+                    $_SESSION["id_utilisateur"] = $utilisateur["id"]; // 🔥 LIGNE IMPORTANTE
+
+                    // Détermine le rôle
+                    if ($fichier === 'administrateur.json') {
+                        $_SESSION["role"] = "admin";
+                        header("Location: admin_dashboard.php");
+                    } else {
+                        $_SESSION["role"] = "utilisateur";
+                        header("Location: moncompte.php");
+                    }
+                    exit();
+                }
             }
         }
     }
 
-    // Si les identifiants sont incorrects
-    echo "Identifiants incorrects.";
+    // ❌ Identifiants incorrects
+    $_SESSION['error'] = "Email ou mot de passe incorrect.";
+    header("Location: connecter.php");
+    exit();
 }
+
+ob_end_flush();
 ?>
+<link rel="stylesheet" href="sitedevoyage.css">
