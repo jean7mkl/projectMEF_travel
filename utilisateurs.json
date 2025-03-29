@@ -1,17 +1,125 @@
 [
     {
-      "id": 1,
-      "login": "johndoe",
-      "mot_de_passe": "abc123",
-      "role": "utilisateur",
-      "informations": {
-        "nom": "John Doe",
-        "email": "johndoe@email.com",
-        "telephone": "0601020304"
-      },
-      "voyages": {
-        "consultes": ["Japon", "Italie"],
-        "achetes": [1001, 1002]
-      }
+        "id": 1,
+        "login": "johndoe",
+        "mot_de_passe": "abc123",
+        "role": "utilisateur",
+        "informations": {
+            "nom": "John Doe",
+            "email": "johndoe@email.com",
+            "telephone": "0601020304"
+        },
+        "voyages": {
+            "consultes": [
+                "Japon",
+                "Italie"
+            ],
+            "achetes": [
+                1001,
+                1002
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "login": "t.t",
+        "mot_de_passe": "$2y$10$NUIRtJVMFEHU1\/FWl1phguwQqRLmfG4Ti9FLt9b.38PYAvsSCxP6S",
+        "role": "utilisateur",
+        "informations": {
+            "nom": "t t",
+            "email": "toto@gmail.com",
+            "telephone": "22551245"
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": []
+        }
+    },
+    {
+        "id": 3,
+        "login": "admin1",
+        "mot_de_passe": "mot_de_passe_hach\u00e9",
+        "role": "administrateur",
+        "informations": {
+            "nom": "Admin",
+            "email": "admin1@example.com",
+            "telephone": "0123456789"
+        }
+    },
+    {
+        "id": 4,
+        "login": "thomas.th",
+        "mot_de_passe": "$2y$10$8FtFLzvDmK6jJvDCgnDTk.GA6IBTiqAFa9Snfth2hU0b0Y1EG2ngm",
+        "role": "utilisateur",
+        "informations": {
+            "nom": "th thomas",
+            "email": "toto1@gmail.com",
+            "telephone": "0787108185"
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": []
+        }
+    },
+    {
+        "id": 5,
+        "login": "jean.mkz",
+        "mot_de_passe": "$2y$10$RED8kN9ktqgOx7xF4on3eelBTWMlvi\/zFfEqdPBnByYX25I8qYNQm",
+        "role": "utilisateur",
+        "informations": {
+            "nom": "mkz jean",
+            "email": "admin2@gmail.com",
+            "telephone": "0787108189"
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": []
+        }
+    },
+    {
+        "id": 6,
+        "login": "leo.t",
+        "mot_de_passe": "$2y$10$So8Yosotw7KVVvz1N7Stm.NbA81LE2mmacP0iS\/1AdO4hW1O94cT.",
+        "role": "utilisateur",
+        "informations": {
+            "nom": "t leo",
+            "email": "leo@gmail.com",
+            "telephone": "0787101010"
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": []
+        }
+    },
+    {
+        "id": 7,
+        "login": "caryl.l",
+        "mot_de_passe": "$2y$10$KJY3n\/uxtw3F3ul\/K98ZNetTp4MbBldGJDE5yoYuPu4c5rR2rCHN6",
+        "role": "utilisateur",
+        "informations": {
+            "nom": "l caryl",
+            "email": "caryl@gmail.com",
+            "telephone": "07878787878"
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": []
+        }
+    },
+    {
+        "id": 8,
+        "login": "max.max",
+        "mot_de_passe": "$2y$10$lQY9nmbbv5pB9haQokS08eXu\/s\/hiHtqgbPN\/nrfFWU7ljs6ZwAoq",
+        "role": "administrateur",
+        "informations": {
+            "nom": "max max",
+            "email": "max@gmail.com",
+            "telephone": "0787108110",
+            "sexe": "Homme"
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": []
+        }
     }
-  ]
+]
