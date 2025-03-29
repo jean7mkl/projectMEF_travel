@@ -1,3 +1,10 @@
+<?php
+session_start();
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,19 +18,19 @@
     <header>
         <div class="header-container">
             <div class="logo-title">
-                <a href="projet.html" class="logo-link">
-                    <img src="Logo.png" alt="Logo Travel4all" class="logo">
+                <a href="projet.php" class="logo-link">
+                    <img src="photo/Logo.png" alt="Logo Travel4all" class="logo">
                 </a>
                 <h1>WHERE2GO</h1>
             </div>
             <nav>
-                <a href="projet.html" class="btn-nav">Notre Accueil</a>
-                <a href="pagequizz.html" class="btn-nav">Découvrir notre concept</a>
-                <a href="présprojet.html" class="btn-nav">Qui sommes-nous?</a>
+                <a href="projet.php" class="btn-nav">Notre Accueil</a>
+                <a href="pagequizz.php" class="btn-nav">Découvrir notre concept</a>
+                <a href="présprojet.php" class="btn-nav">Qui sommes-nous?</a>
             </nav>
             <div class="header-auth">
-                <a href="connecter.html" class="btn btn-primary">Se connecter</a>
-                <p class="small-text">Nouveau client ? <a href="inscription.html">S'inscrire</a></p>
+                <a href="connecter.php" class="btn btn-primary">Se connecter</a>
+                <p class="small-text">Nouveau client ? <a href="inscription.php">S'inscrire</a></p>
             </div>
         </div>
     </header>
@@ -38,7 +45,7 @@
         <div class="offers">
             <div class="offer"><img src="https://www.fodors.com/wp-content/uploads/2019/01/Maldives2.gif" alt="Maldives">
                 <h2 id="Nos-offres">NOTRE QUIZ</h2>
-                <a href="pagequizz.html" class="lienquiz">Démarrer le Quiz</a>
+                <a href="quiz.php" class="lienquiz">Démarrer le Quiz</a>
             </div>
         </div></center> 
 
