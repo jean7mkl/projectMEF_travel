@@ -6,7 +6,7 @@ session_start();
     <div class="header-container">
         <div class="logo-title">
             <a href="projet.html" class="logo-link">
-                <img src="Logo.png" alt="Logo Travel4all" class="logo">
+                <img src="photo/Logo.png" alt="Logo Travel4all" class="logo">
             </a>
             <h1>WHERE2GO</h1>
         </div>
