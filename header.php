@@ -12,19 +12,20 @@ session_start();
         </div>
         
         <nav>
-            <a href="projet.html" class="btn-nav">Notre Accueil</a>
-            <a href="pagequizz.html" class="btn-nav">Découvrir notre concept</a>
-            <a href="présprojet.html" class="btn-nav">Qui sommes-nous?</a>
+            <a href="projet.php" class="btn-nav">Notre Accueil</a>
+            <a href="pagequizz.php" class="btn-nav">Découvrir notre concept</a>
+            <a href="présprojet.php" class="btn-nav">Qui sommes-nous?</a>
         </nav>
 
         <div class="header-auth">
-            <?php if (isset($_SESSION['utilisateur'])) : ?>
+            <?php if (isset($_SESSION['login'])) : ?>
                 <!-- Bouton "Client" -->
-                <a href="moncompte.php" class="btn btn-primary">Client</a>
+                <a href="moncompte.php" class="btn btn-primary"><?php echo $username; ?></a>
+                <a href="deconnexion.php" class="btn btn-secondary">Se déconnecter</a>
             <?php else : ?>
                 <!-- Boutons pour les non-connectés -->
-                <a href="connecter.html" class="btn btn-primary">Se connecter</a>
-                <p class="small-text">Nouveau client ? <a href="inscription.html">S'inscrire</a></p>
+                <a href="connecter.php" class="btn btn-primary">Se connecter</a>
+                <p class="small-text">Nouveau client ? <a href="inscription.php">S'inscrire</a></p>
             <?php endif; ?>
         </div>
     </div>
