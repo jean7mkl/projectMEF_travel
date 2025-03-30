@@ -45,7 +45,7 @@ session_start();
         <div class="offers">
             <div class="offer"><img src="https://www.fodors.com/wp-content/uploads/2019/01/Maldives2.gif" alt="Maldives">
                 <h2 id="Nos-offres">NOTRE QUIZ</h2>
-                <a href="quiz.php" class="lienquiz">Démarrer le Quiz</a>
+                <a href="formulaire.php" class="lienquiz">Démarrer le Quiz</a>
             </div>
         </div></center> 
 

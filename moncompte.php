@@ -64,6 +64,11 @@ $username = htmlspecialchars($_SESSION['login']);
                    <span>Modifiez vos informations personnelles et préférences.</span>
                </a>
 
+               <a href="formulaire.php" class="compte2-button">
+                   <b>Refaire le quiz ?</b>
+                   <span> De nouvelles envies de départs, sans idées concrètes? Refaites notre quiz...</span>
+               </a>
+
                <a href="déconnexion.php" class="compte2-button btn3-danger">
                    <b>Se déconnecter</b>
                    <span>Terminez votre session en toute sécurité.</span>
