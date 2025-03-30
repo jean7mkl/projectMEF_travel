@@ -17,5 +17,15 @@ On s’est réparti les tâches équitablement avec :
 Jean: débogage du css et changement des couleurs (esthétique) globale du site 
 Création de la page pour quizz,présentation, et accueil du site
 Leo recherche de photos plus maquettage des pages 
-Thomas montage pour video sur le site et codage de la page pour s’inscrire   
+Thomas montage pour video sur le site et codage de la page pour s’inscrire 
+
+
+fin février : 
+création des formulaires et du php 
+
+mars: 
+optimisation et problèmes de liaison des pages réglées 
+
+fin mars : 
+ajout réservation, options, étapes + meilleur quiz + (paiement )
 
