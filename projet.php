@@ -55,7 +55,7 @@ if ($message) {
             <div class="header-auth">
     <?php if ($username): ?>
         <a href="moncompte.php" class="btn btn-primary"><?php echo htmlspecialchars($username); ?></a>
-        <a href="deconnexion.php" class="btn btn-primary">Se déconnecter</a>
+        <a href="déconnexion.php" class="btn btn-primary">Se déconnecter</a>
     <?php else: ?>
         <a href="connexion.php" class="btn btn-primary">Connexion</a>
         <a href="inscription.php" class="btn btn-secondary">Inscription</a>
@@ -69,7 +69,7 @@ if ($message) {
     <p>
     <center>
     <div class="container">
-        <!-- Section du Quiz -->
+        
         <div class="offers">
             <div class="offer"><img src="https://www.fodors.com/wp-content/uploads/2019/01/Maldives2.gif" alt="Maldives">
                 <h2 id="Nos-offres">NOTRE QUIZ</h2>

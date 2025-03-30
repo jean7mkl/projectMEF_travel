@@ -11,10 +11,10 @@ $id_utilisateur = $_SESSION['id_utilisateur'];
 $fichier = 'utilisateurs.json';
 $message = "";
 
-// Charger les données utilisateurs
+// Charge les données utilisateurs
 $utilisateurs = file_exists($fichier) ? json_decode(file_get_contents($fichier), true) : [];
 
-// Trouver l'utilisateur courant
+// Trouve l'utilisateur courant
 $utilisateur_actuel = null;
 foreach ($utilisateurs as $index => $u) {
     if ($u['id'] == $id_utilisateur) {
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         <div class="header-auth">
             <a href="moncompte.php" class="btn btn-primary"><?php echo $login; ?></a>
-            <a href="deconnexion.php" class="btn btn-primary">Se déconnecter</a>
+            <a href="déconnexion.php" class="btn btn-primary">Se déconnecter</a>
         </div>
     </div>
 </header>

@@ -2,7 +2,6 @@
 session_start();
 
 if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'administrateur') {
-    header("Location: connecter.php");
     exit();
 }
 

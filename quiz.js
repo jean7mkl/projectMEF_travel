@@ -36,18 +36,27 @@ function loadQuestion() {
 
     Object.keys(step.answers).forEach(answerText => {
         const answerValue = step.answers[answerText];
-        const button = document.createElement("div");
-        button.classList.add("choice");
-        button.innerText = answerText;
-        button.onclick = () => {
-            if (answerValue === "reservation.php") {
-                window.location.href = answerValue;
-            } else {
+
+        if (answerValue === "reservation.php") {
+            // Création d'un lien cliquable à la fin
+            const link = document.createElement("a");
+            link.href = answerValue;
+            link.classList.add("choice");
+            link.innerText = answerText;
+            link.style.textAlign = "center";
+            link.style.textDecoration = "none";
+            choicesEl.appendChild(link);
+        } else {
+            // Bouton normal pour avancer dans le quiz
+            const button = document.createElement("div");
+            button.classList.add("choice");
+            button.innerText = answerText;
+            button.onclick = () => {
                 currentStep = answerValue;
                 loadQuestion();
-            }
-        };
-        choicesEl.appendChild(button);
+            };
+            choicesEl.appendChild(button);
+        }
     });
 }
 

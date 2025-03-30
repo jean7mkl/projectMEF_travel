@@ -153,9 +153,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <a href="présprojet.php" class="btn-nav">Qui sommes-nous?</a>
             </nav>
             <div class="header-auth">
+            <?php if (isset($_SESSION['login'])) : ?>
+                <!-- Bouton "Client" -->
+                <a href="moncompte.php" class="btn btn-primary"><?php echo htmlspecialchars($_SESSION["login"]); ?></a>
+                <a href="déconnexion.php" class="btn btn-secondary">Se déconnecter</a>
+            <?php else : ?>
+                <!-- Boutons pour les non-connectés -->
                 <a href="connecter.php" class="btn btn-primary">Se connecter</a>
                 <p class="small-text">Nouveau client ? <a href="inscription.php">S'inscrire</a></p>
-            </div>
+            <?php endif; ?>
+        </div>
         </div>
     </header>
 <center> </br> </br> </br>

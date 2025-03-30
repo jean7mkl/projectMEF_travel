@@ -125,7 +125,7 @@ $traductions = [
             </nav>
             <div class="header-auth">
                 <span class="btn btn-primary"><?php echo htmlspecialchars($_SESSION["login"]); ?></span>
-                <a href="deconnexion.php" class="small-text">Déconnexion</a>
+                <a href="deconnexion.php" class="btn btn-primary">Déconnexion</a>
             </div>
         </div>
     </header>

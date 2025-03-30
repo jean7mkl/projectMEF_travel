@@ -2,10 +2,19 @@
 session_start();
 ?>
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mes Voyages</title>
+    <link rel="stylesheet" href="sitedevoyage.css">
+</head>
+<body>
+
 <header>
     <div class="header-container">
         <div class="logo-title">
-            <a href="projet.html" class="logo-link">
+            <a href="projet.php" class="logo-link">
                 <img src="photo/Logo.png" alt="Logo Travel4all" class="logo">
             </a>
             <h1>WHERE2GO</h1>
@@ -21,7 +30,7 @@ session_start();
             <?php if (isset($_SESSION['login'])) : ?>
                 <!-- Bouton "Client" -->
                 <a href="moncompte.php" class="btn btn-primary"><?php echo $username; ?></a>
-                <a href="deconnexion.php" class="btn btn-secondary">Se déconnecter</a>
+                <a href="déconnexion.php" class="btn btn-primary">Se déconnecter</a>
             <?php else : ?>
                 <!-- Boutons pour les non-connectés -->
                 <a href="connecter.php" class="btn btn-primary">Se connecter</a>

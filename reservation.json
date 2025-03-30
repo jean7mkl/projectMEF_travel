@@ -25,5 +25,23 @@
         "date_retour": "2025-03-30",
         "prix": 900,
         "statut": "en attente"
+    },
+    {
+        "id_reservation": 1743330068,
+        "id_utilisateur": 8,
+        "destination": "japon",
+        "date_depart": "2025-03-30",
+        "date_retour": "2025-03-31",
+        "prix": 1000,
+        "statut": "en attente"
+    },
+    {
+        "id_reservation": 1743342335,
+        "id_utilisateur": 8,
+        "destination": "japon",
+        "date_depart": "2025-03-30",
+        "date_retour": "2025-03-31",
+        "prix": 900,
+        "statut": "en attente"
     }
 ]
