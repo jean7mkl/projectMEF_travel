@@ -494,3 +494,9 @@ padding: 50px;
 .admin-button:hover {
     background-color: #ffcc80;
 }
+.paiement {
+    border-radius: 10%;
+    border-color: #8e491b;
+    
+    
+    }
