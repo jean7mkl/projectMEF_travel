@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'administrateur') {
-    exit();
-}
 
 $fichier = 'utilisateurs.json';
 $utilisateurs = file_exists($fichier) ? json_decode(file_get_contents($fichier), true) : [];

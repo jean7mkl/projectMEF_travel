@@ -133,7 +133,7 @@ $traductions = [
     <div class="resume-container">
         <h2 class="resume-title">Résumé de vos choix de voyage</h2>
        
-        <?php if (!empty($donnees_utilisateur)): ?>
+        
             <div class="resume-section">
                 <h3>Informations personnelles</h3>
                 <div class="resume-item">
@@ -196,9 +196,9 @@ $traductions = [
                 <a href="quiz.php" class="btn btn-secondary">Modifier mes choix</a>
                 <button type="submit" class="btn btn-primary">Confirmer et réserver</button>
             </div>
-        <?php else: ?>
-            <p>Vous n'avez pas encore complété le quiz. <a href="quiz.php">Commencer le quiz</a></p>
-        <?php endif; ?>
+
+            <p>Vous n'avez pas encore complété le quiz. <div class="btn btn-primary"><a href="quiz.php">Commencer le quiz</a></p>
+        
     </div>
 
     <footer>

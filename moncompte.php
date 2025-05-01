@@ -73,7 +73,7 @@ $username = htmlspecialchars($_SESSION['login']);
                    <b>Se déconnecter</b>
                    <span>Terminez votre session en toute sécurité.</span>
                </a>
-               <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'administrateur'): ?>
+               <?php if (isset($_SESSION['role']) == 'administrateur'): ?>
                 
                  <a href="admin_dashboard.php" class="compte2-button admin-button">
                 <b>Espace administrateur</b>
