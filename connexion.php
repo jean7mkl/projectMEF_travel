@@ -1,8 +1,9 @@
 <?php
 session_start();
-ob_start(); // Évite les erreurs de redirection
+ob_start(); // Pour éviter les erreurs de redirection
 
-include 'header.php'; // Inclusion du header
+include 'header.php';
+include 'footer.php';
 
 $fichiers_utilisateurs = ['utilisateurs.json', 'administrateur.json'];
 
@@ -12,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($email) || empty($mot_de_passe)) {
         $_SESSION['error'] = "Veuillez remplir tous les champs.";
-        header("Location: connecter.php");
+        header("Location: connecter.php?error=" . urlencode($_SESSION['error']));
         exit();
     }
 
@@ -28,12 +29,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $utilisateur["informations"]["email"] === $email &&
                     password_verify($mot_de_passe, $utilisateur["mot_de_passe"])
                 ) {
-                    // ✅ Stocke toutes les infos utiles dans la session
                     $_SESSION["login"] = $utilisateur["login"];
                     $_SESSION["nom"] = $utilisateur["informations"]["nom"];
-                    $_SESSION["id_utilisateur"] = $utilisateur["id"]; // 🔥 LIGNE IMPORTANTE
+                    $_SESSION["id_utilisateur"] = $utilisateur["id"];
 
-                    // Détermine le rôle
                     if ($fichier === 'administrateur.json') {
                         $_SESSION["role"] = "admin";
                         header("Location: admin_dashboard.php");
@@ -47,12 +46,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // ❌ Identifiants incorrects
+    // ❌ Aucun utilisateur trouvé
     $_SESSION['error'] = "Email ou mot de passe incorrect.";
-    header("Location: connecter.php");
+    header("Location: connecter.php?error=" . urlencode($_SESSION['error']));
     exit();
 }
 
 ob_end_flush();
 ?>
-<link rel="stylesheet" href="sitedevoyage.css">

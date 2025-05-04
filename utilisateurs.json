@@ -18,7 +18,8 @@
                 1001,
                 1002
             ]
-        }
+        },
+        "statut": "vip"
     },
     {
         "id": 2,
@@ -89,7 +90,8 @@
         "voyages": {
             "consultes": [],
             "achetes": []
-        }
+        },
+        "statut": "normal"
     },
     {
         "id": 7,
@@ -120,6 +122,40 @@
         "voyages": {
             "consultes": [],
             "achetes": []
+        },
+        "statut": "vip"
+    },
+    {
+        "id": 9,
+        "login": "jean.admin2",
+        "mot_de_passe": "$2y$10$3dH8yo.cKuHrCu2HHH7s2eyup6WHCE5yS5mZJE36fiTloRrz\/SePK",
+        "role": "utilisateur",
+        "informations": {
+            "nom": "admin2 jean",
+            "email": "admin2mdp@gmail.com",
+            "telephone": "1233455678",
+            "sexe": "Homme"
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": []
         }
+    },
+    {
+        "id": 10,
+        "login": "jean.moukarzel",
+        "mot_de_passe": "$2y$10$cgxJXqIVrjaxDLgKH2iySOCYHXvOImHZs\/VpTVblyBHn2PHqSlBzq",
+        "role": "utilisateur",
+        "informations": {
+            "nom": "Moukarzel jean",
+            "email": "AZER@gmail.com",
+            "telephone": "1234567899",
+            "sexe": "Femme"
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": []
+        },
+        "statut": "vip"
     }
 ]

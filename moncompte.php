@@ -3,7 +3,7 @@ session_start();
 
 // Vérifie si l'utilisateur est connecté, sinon redirige vers la page de connexion
 if (!isset($_SESSION['login']) || empty($_SESSION['login'])) { 
-    header("Location: connecter.php");
+    header("Location: connecter.html");
     exit();
 }
 
@@ -21,28 +21,8 @@ $username = htmlspecialchars($_SESSION['login']);
 </head>
 
 <body>
-   <header>
-       <div class="header-container">
-           <div class="logo-title">
-               <a href="projet.php" class="logo-link">
-                   <img src="photo/Logo.png" alt="Logo Travel4all" class="logo">
-               </a>
-               <h1>WHERE2GO</h1>
-           </div>
+<?php include 'header.php'; ?>
 
-           <nav>
-               <a href="projet.php" class="btn-nav">Accueil</a>
-               <a href="pagequizz.php" class="btn-nav">Notre concept</a>
-               <a href="présprojet.php" class="btn-nav">Qui sommes-nous?</a>
-           </nav>
-
-           
-           <div class="header-auth">
-    <a href="moncompte.php" class="btn btn-primary"><?php echo $username; ?></a>
-    <a href="déconnexion.php" class="btn btn-primary">Se déconnecter</a>
-</div>
-       </div>
-   </header>
 
    <main>
        <section class="compte2-section">
@@ -73,6 +53,9 @@ $username = htmlspecialchars($_SESSION['login']);
                    <b>Se déconnecter</b>
                    <span>Terminez votre session en toute sécurité.</span>
                </a>
+
+
+               
                <?php if (isset($_SESSION['role']) == 'administrateur'): ?>
                 
                  <a href="admin_dashboard.php" class="compte2-button admin-button">
@@ -85,8 +68,7 @@ $username = htmlspecialchars($_SESSION['login']);
        </section>
    </main>
 
-   <footer>
-       <p>&copy; 2025 Agence de Voyage de Léo Bouabdallah, Thomas Ribeiro, Jean Moukarzel.<br> Tous droits réservés.</p>
-   </footer>
+   <?php include 'footer.php'; ?>
+
 </body>
 </html>

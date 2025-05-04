@@ -1,0 +1,159 @@
+
+  :root {
+    --white: #1e1e1e;
+    --light-grey: #2c2c2c;
+    --grey: #444444;
+    --marron: #ffddb3;
+    --blue: #70c7ff;
+    --blue2: #80aaff;
+  }
+
+body {
+    background-color: #121212 !important;
+    color: #f0f0f0 !important;
+    border-color: #333 !important;
+}
+
+body a {
+    color: #bb86fc !important;
+}
+
+body button {
+    background-color: #bb86fc !important;
+    color: #f0f0f0 !important;
+}
+
+header {
+    background-color: #121212 !important;
+    color: #f0f0f0 !important;
+    border-color: #333 !important;
+}
+
+header a {
+    color: #bb86fc !important;
+}
+
+header button {
+    background-color: #bb86fc !important;
+    color: #f0f0f0 !important;
+}
+
+footer {
+    background-color: #121212 !important;
+    color: #f0f0f0 !important;
+    border-color: #333 !important;
+}
+
+footer a {
+    color: #bb86fc !important;
+}
+
+footer button {
+    background-color: #bb86fc !important;
+    color: #f0f0f0 !important;
+}
+
+.btn {
+    background-color: #121212 !important;
+    color: #f0f0f0 !important;
+    border-color: #333 !important;
+}
+
+.btn a {
+    color: #bb86fc !important;
+}
+
+.btn button {
+    background-color: #bb86fc !important;
+    color: #f0f0f0 !important;
+}
+
+.quiz-container {
+    background-color: #121212 !important;
+    color: #f0f0f0 !important;
+    border-color: #333 !important;
+}
+
+.quiz-container a {
+    color: #bb86fc !important;
+}
+
+.quiz-container button {
+    background-color: #bb86fc !important;
+    color: #f0f0f0 !important;
+}
+
+.resume-container {
+    background-color: #121212 !important;
+    color: #f0f0f0 !important;
+    border-color: #333 !important;
+}
+
+.resume-container a {
+    color: #bb86fc !important;
+}
+
+.resume-container button {
+    background-color: #bb86fc !important;
+    color: #f0f0f0 !important;
+}
+
+.reservation-form {
+    background-color: #121212 !important;
+    color: #f0f0f0 !important;
+    border-color: #333 !important;
+}
+
+.reservation-form a {
+    color: #bb86fc !important;
+}
+
+.reservation-form button {
+    background-color: #bb86fc !important;
+    color: #f0f0f0 !important;
+}
+
+.voyage-card {
+    background-color: #121212 !important;
+    color: #f0f0f0 !important;
+    border-color: #333 !important;
+}
+
+.voyage-card a {
+    color: #bb86fc !important;
+}
+
+.voyage-card button {
+    background-color: #bb86fc !important;
+    color: #f0f0f0 !important;
+}
+
+.alert-success {
+    background-color: #121212 !important;
+    color: #f0f0f0 !important;
+    border-color: #333 !important;
+}
+
+.alert-success a {
+    color: #bb86fc !important;
+}
+
+.alert-success button {
+    background-color: #bb86fc !important;
+    color: #f0f0f0 !important;
+}
+
+.mode-switch-container button {
+    background-color: #121212 !important;
+    color: #f0f0f0 !important;
+    border-color: #333 !important;
+}
+
+.mode-switch-container button a {
+    color: #bb86fc !important;
+}
+
+.mode-switch-container button button {
+    background-color: #bb86fc !important;
+    color: #f0f0f0 !important;
+}

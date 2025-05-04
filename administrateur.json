@@ -2,10 +2,10 @@
     {
         "id": 1,
         "login": "admin1",
-        "mot_de_passe": "mot_de_passe_haché",
+        "mot_de_passe": "$2y$10$W2iF9EX9Xh6lxRgYF9ABVuIG.qg6X9U.rIZxS7pQuybivgF9N5TgC",
         "role": "administrateur",
         "informations": {
-            "nom": "Admin",
+            "nom": "Thomas",
             "email": "admin1@example.com",
             "telephone": "0123456789"
         }

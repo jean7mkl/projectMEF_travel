@@ -11,10 +11,8 @@ $id_utilisateur = $_SESSION['id_utilisateur'];
 $fichier = 'utilisateurs.json';
 $message = "";
 
-// Charge les données utilisateurs
 $utilisateurs = file_exists($fichier) ? json_decode(file_get_contents($fichier), true) : [];
 
-// Trouve l'utilisateur courant
 $utilisateur_actuel = null;
 foreach ($utilisateurs as $index => $u) {
     if ($u['id'] == $id_utilisateur) {
@@ -23,7 +21,6 @@ foreach ($utilisateurs as $index => $u) {
     }
 }
 
-// Traitement du formulaire de modification
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nom = htmlspecialchars($_POST['nom']);
     $email = htmlspecialchars($_POST['email']);
@@ -35,11 +32,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $utilisateur_actuel['informations']['telephone'] = $telephone;
 
         file_put_contents($fichier, json_encode($utilisateurs, JSON_PRETTY_PRINT));
-        $_SESSION['nom'] = $nom; // Mise à jour dans la session aussi
+        $_SESSION['nom'] = $nom;
         $message = "Informations mises à jour avec succès.";
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -48,55 +44,114 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <title>Mon profil</title>
     <link rel="stylesheet" href="sitedevoyage.css">
+    <style>
+        .profil-form {
+            max-width: 600px;
+            margin: auto;
+        }
+        .form-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .form-row label {
+            width: 100px;
+            font-weight: bold;
+        }
+        .form-row input {
+            flex: 1;
+            padding: 6px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .actions button {
+            padding: 6px 10px;
+            border: none;
+            background-color: #B5651D;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .actions button:hover {
+            opacity: 0.9;
+        }
+        #submit-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <div class="header-container">
-        <div class="logo-title">
-            <a href="projet.php" class="logo-link">
-                <img src="photo/Logo.png" alt="Logo Travel4all" class="logo">
-            </a>
-            <h1>WHERE2GO</h1>
-        </div>
-
-        <nav>
-            <a href="projet.php" class="btn-nav">Accueil</a>
-            <a href="pagequizz.php" class="btn-nav">Notre concept</a>
-            <a href="présprojet.php" class="btn-nav">Qui sommes-nous?</a>
-        </nav>
-
-        <div class="header-auth">
-            <a href="moncompte.php" class="btn btn-primary"><?php echo $login; ?></a>
-            <a href="déconnexion.php" class="btn btn-primary">Se déconnecter</a>
-        </div>
-    </div>
-</header>
+<?php include 'header.php'; ?>
 
 <main class="compte2-section">
     <h1>Mon profil</h1>
 
     <?php if (!empty($message)): ?>
-        <div class="alert-success"> <?php echo $message; ?> </div>
+        <div class="alert-success"><?= htmlspecialchars($message) ?></div>
     <?php endif; ?>
 
-    <form method="POST" class="profil-form">
-        <label>Nom :</label>
-        <input type="text" name="nom" value="<?php echo htmlspecialchars($utilisateur_actuel['informations']['nom']); ?>" required>
+    <form method="POST" class="profil-form" id="profilForm">
+        <?php
+        $infos = $utilisateur_actuel['informations'];
+        foreach (['nom', 'email', 'telephone'] as $champ):
+            $val = htmlspecialchars($infos[$champ]);
+        ?>
+        <div class="form-row">
+            <label for="<?= $champ ?>"><?= ucfirst($champ) ?> :</label>
+            <input type="<?= $champ === 'email' ? 'email' : 'text' ?>" id="<?= $champ ?>" name="<?= $champ ?>" value="<?= $val ?>" disabled>
+            <div class="actions">
+                <button type="button" onclick="enableEdit('<?= $champ ?>')">✏️</button>
+                <button type="button" onclick="cancelEdit('<?= $champ ?>')" style="display:none;">❌</button>
+            </div>
+        </div>
+        <?php endforeach; ?>
 
-        <label>Email :</label>
-        <input type="email" name="email" value="<?php echo htmlspecialchars($utilisateur_actuel['informations']['email']); ?>" required>
-
-        <label>Téléphone :</label>
-        <input type="text" name="telephone" value="<?php echo htmlspecialchars($utilisateur_actuel['informations']['telephone']); ?>" required>
-
-        <button type="submit">Enregistrer</button>
+        <div id="submit-container" style="display:none;">
+            <button type="submit" class="btn btn-primary">💾 Soumettre les modifications</button>
+        </div>
     </form>
 </main>
 
-<footer>
-    <p>&copy; 2025 Agence de Voyage de Léo Bouabdallah, Thomas Ribeiro, Jean Moukarzel.<br> Tous droits réservés.</p>
-</footer>
+<?php include 'footer.php'; ?>
+
+<script>
+const originalValues = {};
+
+function enableEdit(field) {
+    const input = document.getElementById(field);
+    const buttons = input.parentElement.querySelectorAll('button');
+    if (!(field in originalValues)) {
+        originalValues[field] = input.value;
+    }
+
+    input.disabled = false;
+    buttons[0].style.display = 'none'; // ✏️
+    buttons[1].style.display = 'inline-block'; // ❌
+    document.getElementById('submit-container').style.display = 'block';
+}
+
+function cancelEdit(field) {
+    const input = document.getElementById(field);
+    const buttons = input.parentElement.querySelectorAll('button');
+
+    input.value = originalValues[field];
+    input.disabled = true;
+    buttons[0].style.display = 'inline-block'; // ✏️
+    buttons[1].style.display = 'none'; // ❌
+
+    // Cacher le bouton soumettre si aucune modif active
+    let modifActive = false;
+    document.querySelectorAll('.profil-form input').forEach(i => {
+        if (!i.disabled) modifActive = true;
+    });
+    if (!modifActive) {
+        document.getElementById('submit-container').style.display = 'none';
+    }
+}
+</script>
 
 </body>
 </html>

@@ -56,27 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-<header>
-    <div class="header-container">
-        <div class="logo-title">
-            <a href="projet.php" class="logo-link">
-                <img src="photo/Logo.png" alt="Logo Travel4all" class="logo">
-            </a>
-            <h1>WHERE2GO</h1>
-        </div>
-
-        <nav>
-            <a href="projet.php" class="btn-nav">Accueil</a>
-            <a href="pagequizz.php" class="btn-nav">Notre concept</a>
-            <a href="présprojet.php" class="btn-nav">Qui sommes-nous?</a>
-        </nav>
-
-        <div class="header-auth">
-            <a href="moncompte.php" class="btn btn-primary"><?php echo $username; ?></a>
-            <a href="deconnexion.php" class="btn btn-primary">Se déconnecter</a>
-        </div>
-    </div>
-</header>
+<?php include 'header.php'; ?>
 
 <main class="compte2-section">
     <h1>Réserver un nouveau voyage :</h1>
@@ -102,9 +82,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 </main>
 
-<footer>
-    <p>&copy; 2025 Agence de Voyage de Léo Bouabdallah, Thomas Ribeiro, Jean Moukarzel.<br> Tous droits réservés.</p>
-</footer>
+<?php include 'footer.php'; ?>
+
 
 </body>
 </html>

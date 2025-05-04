@@ -1,5 +1,5 @@
 <?php
 session_start();
-header("Location: projet.php");
+header("Location : projet.php");
 exit();
 ?>
