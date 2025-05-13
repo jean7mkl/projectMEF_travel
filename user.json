@@ -1,0 +1,42 @@
+[
+    {
+      "nom": "Batman",
+      "email": "bruce@erreur.com",
+      "motDePasse": "123456", 
+      "role": "Justicier professionnel",
+      "note": "Ne se connecte jamais sans son costume"
+    },
+    {
+      "nom": "Cookie Monster",
+      "email": "cookies@nomnom.org",
+      "motDePasse": "miamMiamLesCookies",
+      "role": "Responsable sécurité",
+      "note": "A refusé de partager les cookies du site 🍪"
+    },
+    {
+      "nom": "Professeur Mystère",
+      "email": "prof@inconnu.edu",
+      "motDePasse": "je_vois_tout",
+      "role": "Grand Maître du TD",
+      "note": "Peut corriger un devoir sans l'ouvrir 🧙‍♂️"
+    },
+    {
+      "nom": "Elève Lambda",
+      "email": "etudiant@pasfini.net",
+      "motDePasse": "enencoretrainetudier",
+      "role": "Apprenti sorcier",
+      "note": "A tenté de compiler un sandwich"
+    },
+    {
+      "nom": "Benzema Karim",
+      "email": "Kaka9@matrix.com",
+      "motDePasse": "jesuisplusfortqueMbapppé",
+      "role": " Buteur",
+      "note": "Cherche désespérément le Ballon d'or"
+    }
+  ]
+  {
+    "message": "Bravo, vous avez trouvé le fichier secret ! 🍪 Mais pas de vrais mots de passe ici... juste des miettes de cookies.",
+    "utilisateurs": [ ... ]
+  }
+    

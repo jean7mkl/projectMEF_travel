@@ -594,3 +594,27 @@ border-color: #8e491b;
 .mode-switch-container button:hover {
     background: #f0f0f0;
 }
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 20px auto;
+  }
+  th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  input {
+    width: 90%;
+  }
+  .loader {
+    margin-left: 5px;
+  }
+  .status-msg {
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  button.save-btn {
+    cursor: pointer;
+  }
+  

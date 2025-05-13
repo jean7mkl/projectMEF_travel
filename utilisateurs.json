@@ -53,9 +53,9 @@
         "mot_de_passe": "$2y$10$8FtFLzvDmK6jJvDCgnDTk.GA6IBTiqAFa9Snfth2hU0b0Y1EG2ngm",
         "role": "utilisateur",
         "informations": {
-            "nom": "th thomas",
+            "nom": "toto1tot1",
             "email": "toto1@gmail.com",
-            "telephone": "0787108185"
+            "telephone": ""
         },
         "voyages": {
             "consultes": [],

@@ -116,14 +116,39 @@ document.querySelectorAll(".admin-action-form").forEach(form => {
     const loader = form.querySelector(".loading-text");
 
     buttons.forEach(button => {
-        button.addEventListener("click", function(event) {
+        button.addEventListener("click", async function(event) {
             event.preventDefault();
+
+            const user_id = form.querySelector('input[name="user_id"]').value;
+            const action = button.value;
+
             buttons.forEach(b => b.disabled = true);
             loader.style.display = "inline";
 
-            setTimeout(() => {
-                form.submit();
-            }, 2000); // 2 secondes
+            try {
+                await new Promise(r => setTimeout(r, 2000)); // simulation délai
+                const res = await fetch("update_statut.php", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ user_id, action })
+                });
+                const data = await res.json();
+                loader.textContent = data.success ? "✅ OK" : "❌ Échec";
+
+                setTimeout(() => {
+                    loader.style.display = "none";
+                    buttons.forEach(b => b.disabled = false);
+                    if (data.success) {
+                        // rafraîchir la cellule statut sans recharger
+                        const statutCell = form.closest("tr").querySelector("td:nth-child(5)");
+                        statutCell.textContent = data.new_statut;
+                    }
+                }, 1500);
+
+            } catch (error) {
+                loader.textContent = "❌ Erreur";
+                buttons.forEach(b => b.disabled = false);
+            }
         });
     });
 });
