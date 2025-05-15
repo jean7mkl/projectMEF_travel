@@ -1,4 +1,5 @@
 <?php
+include("verif_statut.php");
 session_start();
 
 if (!isset($_SESSION['login']) || !isset($_SESSION['id_utilisateur'])) {

@@ -44,6 +44,12 @@ include("header.php");
 
 <h1 style="text-align: center; margin-top: 30px;">Nos Voyages</h1>
 
+<div style="text-align:center; margin: 20px auto;">
+    <input type="text" id="searchVoyage" placeholder="🔍 Rechercher un voyage..." 
+           style="padding: 10px; width: 60%; font-size: 16px; border-radius: 8px; border: 1px solid #ccc;">
+</div>
+
+
 <div class="voyages-container">
     <?php
     $voyages = [
@@ -66,6 +72,33 @@ include("header.php");
     }
     ?>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("searchVoyage");
+    const container = document.querySelector(".voyages-container");
+    const cartes = Array.from(container.children);
+
+    // 🔤 Trie par ordre alphabétique
+    cartes.sort((a, b) => {
+        const nomA = a.querySelector("h3").textContent.toLowerCase();
+        const nomB = b.querySelector("h3").textContent.toLowerCase();
+        return nomA.localeCompare(nomB);
+    });
+
+    // Applique le tri au conteneur
+    cartes.forEach(carte => container.appendChild(carte));
+
+    // 🔍 Filtrage en direct
+    searchInput.addEventListener("input", () => {
+        const filtre = searchInput.value.toLowerCase();
+
+        cartes.forEach(carte => {
+            const nom = carte.querySelector("h3").textContent.toLowerCase();
+            carte.style.display = nom.includes(filtre) ? "block" : "none";
+        });
+    });
+});
+</script>
 
 </body>
 </html>

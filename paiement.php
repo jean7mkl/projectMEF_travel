@@ -13,7 +13,7 @@ $id_reservation = (int)$_POST['id_reservation'];
 
 $transaction = uniqid();
 $vendeur = "MEF-1_E";
-$retour = "http://localhost:8080/jalon2/confirmation_paiement.php?id_reservation=" . $id_reservation;
+$retour = "http://localhost:8080/jalon3/MEF_travel/confirmation_paiement.php?id_reservation=" . $id_reservation;
 
 
 // Récupération de la clé API

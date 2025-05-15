@@ -1,4 +1,5 @@
 <?php
+include("verif_statut.php");
 session_start();
 
 $fichier = 'utilisateurs.json';
@@ -71,6 +72,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'], $_POST['use
     <?php if (!empty($message)): ?>
         <div class="alert-success"> <?php echo $message; ?> </div>
     <?php endif; ?>
+    <div style="text-align:center; margin-bottom: 20px;">
+    <input type="text" id="searchInput" placeholder="🔍 Rechercher un utilisateur..." style="padding:10px; width:60%; font-size:16px; border-radius:6px; border:1px solid #ccc;">
+</div>
 
     <table class="admin-table">
         <thead>
@@ -152,6 +156,18 @@ document.querySelectorAll(".admin-action-form").forEach(form => {
         });
     });
 });
+
+// Barre de recherche : filtre les lignes du tableau
+document.getElementById("searchInput").addEventListener("input", function () {
+    const search = this.value.toLowerCase();
+    const lignes = document.querySelectorAll(".admin-table tbody tr");
+
+    lignes.forEach(ligne => {
+        const texte = ligne.innerText.toLowerCase();
+        ligne.style.display = texte.includes(search) ? "" : "none";
+    });
+});
+
 </script>
 
 </body>
