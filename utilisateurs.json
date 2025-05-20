@@ -157,5 +157,21 @@
             "achetes": []
         },
         "statut": "vip"
+    },
+    {
+        "id": 11,
+        "login": "jean.moukarzel1",
+        "mot_de_passe": "$2y$10$HvFdpnLNX5fqpdKmCPj5UOtK9KYcy\/55aqQDBjK\/uZ\/7rz6AgZ27.",
+        "role": "utilisateur",
+        "informations": {
+            "nom": "moukarzel jean",
+            "email": "qsd@gmail.com",
+            "telephone": "0666787873",
+            "sexe": "Homme"
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": []
+        }
     }
 ]
