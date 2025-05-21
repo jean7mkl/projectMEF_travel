@@ -9,5 +9,43 @@
             "email": "admin1@example.com",
             "telephone": "0123456789"
         }
+    },
+{
+        "id": 11,
+        "login": "jean.moukarzel1",
+        "mot_de_passe": "$2y$10$HvFdpnLNX5fqpdKmCPj5UOtK9KYcy\/55aqQDBjK\/uZ\/7rz6AgZ27.",
+        "role": "administrateur",
+        "informations": {
+            "nom": "moukarzel jean",
+            "email": "qsd@gmail.com",
+            "telephone": "0666787873",
+            "sexe": "Homme"
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": []
+        }
+    },
+    {
+        "id": 1,
+        "login": "johndoe",
+        "mot_de_passe": "abc12345",
+        "role": "administrateur",
+        "informations": {
+            "nom": "John Doe",
+            "email": "johndoe@email.com",
+            "telephone": "0601020304"
+        },
+        "voyages": {
+            "consultes": [
+                "Japon",
+                "Italie"
+            ],
+            "achetes": [
+                1001,
+                1002
+            ]
+        },
+        "statut": "vip"
     }
 ]

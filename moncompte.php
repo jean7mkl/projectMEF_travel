@@ -56,12 +56,15 @@ $username = htmlspecialchars($_SESSION['login']);
 
 
                
-               <?php if (isset($_SESSION['role']) == 'administrateur'): ?>
-                
+               <?php if (isset($_SESSION['role'])):
+                    if( $_SESSION['role'] == 'admin') :
+                ?>
+
                  <a href="admin_dashboard.php" class="compte2-button admin-button">
                 <b>Espace administrateur</b>
                 <span>Gérer les utilisateurs, les statuts spéciaux et les restrictions.</span>
                 </a>
+                <?php endif; ?>
                 <?php endif; ?>
 
            </div>

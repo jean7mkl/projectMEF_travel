@@ -2,7 +2,7 @@
     {
         "id": 1,
         "login": "johndoe",
-        "mot_de_passe": "abc123",
+        "mot_de_passe": "abc12345",
         "role": "utilisateur",
         "informations": {
             "nom": "John Doe",
@@ -159,14 +159,14 @@
         "statut": "banni"
     },
     {
-        "id": 11,
-        "login": "jean.moukarzel1",
-        "mot_de_passe": "$2y$10$HvFdpnLNX5fqpdKmCPj5UOtK9KYcy\/55aqQDBjK\/uZ\/7rz6AgZ27.",
+        "id": 12,
+        "login": "jean.moukarzel2",
+        "mot_de_passe": "$2y$10$iDVzPh18VivC5WihYHNEQOsEOYaVCcaeriAkpYbnnh\/2svGhdple2",
         "role": "utilisateur",
         "informations": {
-            "nom": "moukarzel jean",
-            "email": "qsd@gmail.com",
-            "telephone": "0666787873",
+            "nom": "Moukarzel Jean",
+            "email": "aq@gmail.com",
+            "telephone": "0761249473",
             "sexe": "Homme"
         },
         "voyages": {

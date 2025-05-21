@@ -68,9 +68,9 @@ if ($statut_paiement_banque === "accepted") {
             error_log("Structure incorrecte dans " . $fichier_reservations . " pour transaction " . htmlspecialchars($id_reservation_key) . ". Attendu un objet JSON à la racine.");
         }
         // L'ID de réservation est la clé. Utiliser (string) pour la cohérence.
-        elseif (isset($reservations[(string)$id_reservation_key])) {
-            if ($reservations[(string)$id_reservation_key]['statut'] !== "Payée") {
-                $reservations[(string)$id_reservation_key]['statut'] = "Payée";
+        elseif (isset($reservations[$id_reservation_key])) {
+            if ($reservations[(string)$id_reservation_key]['status'] !== "Payée") {
+                $reservations[(string)$id_reservation_key]['status'] = "Payée";
                 $reservations[(string)$id_reservation_key]['date_paiement_confirme'] = date('Y-m-d H:i:s');
                 // Vous pouvez aussi stocker $montant_recu ou d'autres infos de la banque ici si pertinent
                 // $reservations[(string)$id_reservation_key]['montant_confirme_banque'] = (float)$montant_recu;
