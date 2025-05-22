@@ -92,21 +92,22 @@ if (file_exists($fichier)) {
     <?php else: ?>
         <div class="voyages-list">
             <?php foreach ($reservations_utilisateur as $voyage): ?>
-                <div class="voyage-card <?= $voyage['statut'] === 'Payé' ? 'payee' : 'attente' ?>">
-                    <span class="badge <?= $voyage['statut'] === 'Payé' ? 'payee' : 'attente' ?>">
-                        <?= $voyage['statut'] === 'Payé' ? 'PAYÉ ✅' : 'À PAYER 💳' ?>
+                <div class="voyage-card <?= $voyage['status'] === 'Payé' ? 'payee' : 'attente' ?>">
+                    <span class="badge <?= $voyage['status'] === 'Payé' ? 'payee' : 'attente' ?>">
+                        <?= $voyage['status'] === 'Payé' ? 'PAYÉ ✅' : 'À PAYER 💳' ?>
                     </span>
                     <h3><?= htmlspecialchars(ucfirst($voyage['destination'])) ?></h3>
                     <p>✈️ <strong>Départ :</strong> <?= htmlspecialchars($voyage['date_depart']) ?></p>
                     <p>🛬 <strong>Retour :</strong> <?= htmlspecialchars($voyage['date_retour']) ?></p>
                     <p>💰 <strong>Prix :</strong> <?= htmlspecialchars($voyage['prix']) ?> €</p>
-                    <p>📦 <strong>Statut :</strong> <?= htmlspecialchars($voyage['statut']) ?></p>
+                    <p>📦 <strong>Statut :</strong> <?= htmlspecialchars($voyage['status']) ?></p>
 
-                    <?php if ($voyage['statut'] === 'En attente'): ?>
+                    <?php if ($voyage['status'] === 'En attente'): ?>
                         <form action="paiement.php" method="post">
                             <input type="hidden" name="id_reservation" value="<?= $voyage['id'] ?>">
                             <input type="hidden" name="montant" value="<?= $voyage['prix'] ?>">
-                            <input type="hidden" name="destination" value="<?= htmlspecialchars($voyage['destination']) ?>">
+                            <input type="hidden" name="destination" value="<?= htmlspecialchars($voyage['destination'], ENT_QUOTES) ?>">
+                            <input type="hidden" name="transaction" value="<?= htmlspecialchars($voyage['transaction'], ENT_QUOTES) ?>">
                             <button type="submit" class="btn btn-primary">Payer ce voyage</button>
                         </form>
                     <?php else: ?>
