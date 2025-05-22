@@ -1,8 +1,12 @@
+
 <?php include("header.php"); ?>
 
-
-
-
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Détails du Voyage</title>
+    <link rel="stylesheet" href="sitedevoyage.css">
     <style>
         .detail-container {
             max-width: 900px;
@@ -19,32 +23,50 @@
             margin-bottom: 20px;
         }
         .detail-container h1 {
-            font-size: 32px;
+            font-size: 2.5rem;
             margin-bottom: 10px;
+            color: #333;
         }
         .detail-container p {
-            font-size: 18px;
-            line-height: 1.8;
-            text-align: left;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 20px;
         }
-        .btn {
+        .btn-primary {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
+            margin: 0.5rem;
+            padding: 0.75rem 1.5rem;
             background-color: #0077cc;
-            color: white;
+            color: #fff;
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
+            transition: background-color 0.3s ease;
         }
-        .btn:hover {
+        .btn-primary:hover {
             background-color: #005fa3;
         }
+        .btn-secondary {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #6c757d;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
     </style>
-
+</head>
 <body>
 
 <?php
+// Données du catalogue
 $voyages = [
     "barcelone" => [
         "titre" => "Barcelone",
@@ -91,25 +113,40 @@ $voyages = [
         "image" => "photo/pexels-gantas-4484243.png",
         "description" => "La Côte d’Azur, entre mer et collines, est une destination de charme et de prestige. Profitez du soleil à Nice, flânez sur la Croisette à Cannes, explorez les ruelles de Saint-Tropez ou visitez les musées de Monaco. La région propose aussi de magnifiques villages perchés comme Èze ou Saint-Paul-de-Vence. Plages, marchés provençaux, cuisine méditerranéenne et ambiance chic : tout est réuni pour un séjour inoubliable sur la Riviera française."
     ]
-];
+];  // identique à ton code précédent pour chaque entrée
 
+// Récupération du slug
 $slug = $_GET['dest'] ?? 'barcelone';
 
 if (isset($voyages[$slug])) {
     $voyage = $voyages[$slug];
-    echo '<div class="detail-container">';
-    echo '<img src="'.$voyage['image'].'" alt="'.$voyage['titre'].'">';
-    echo '<h1>'.$voyage['titre'].'</h1>';
-    echo '<p>'.$voyage['description'].'</p>';
-    echo '<a class="btn" href="formulaire.php?dest='.$slug.'">Réserver ce voyage</a><br>';
-    echo '<a class="btn" href="voyage.php">← Retour aux voyages</a>';
-    echo '</div>';
+?>
+    <div class="detail-container">
+        <img src="<?= htmlspecialchars($voyage['image'], ENT_QUOTES) ?>" alt="<?= htmlspecialchars($voyage['titre'], ENT_QUOTES) ?>">
+        <h1><?= htmlspecialchars($voyage['titre'], ENT_QUOTES) ?></h1>
+        <p><?= htmlspecialchars($voyage['description'], ENT_QUOTES) ?></p>
+
+        <!-- Bouton Réserver -->
+        <a href="formulaire.php?dest=<?= rawurlencode($slug) ?>" class="btn btn-primary">
+            Réserver ce voyage
+        </a>
+
+        <!-- Retour catalogue -->
+        <a href="voyage.php" class="btn-secondary">
+            ← Retour aux voyages
+        </a>
+    </div>
+<?php
 } else {
-    echo '<div class="detail-container"><p>Voyage non trouvé.</p></div>';
+?>
+    <div class="detail-container">
+        <h2>Voyage non trouvé</h2>
+        <a href="voyage.php" class="btn-secondary">← Retour aux voyages</a>
+    </div>
+<?php
 }
 ?>
 
+<?php include("footer.php"); ?>
 </body>
 </html>
-
-

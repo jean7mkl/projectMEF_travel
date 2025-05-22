@@ -2,6 +2,17 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+require_once __DIR__ . '/auth_lib.php';
+
+// Si l’utilisateur est identifié ET banni, on le redirige
+if (isset($_SESSION['id_utilisateur'])
+    && isUserBanned((int)$_SESSION['id_utilisateur'])
+    && basename($_SERVER['PHP_SELF']) !== 'banni.php'
+) {
+    header('Location: banni.php');
+    exit();
+}
+
 
 $username = $_SESSION['username'] ?? null;
 

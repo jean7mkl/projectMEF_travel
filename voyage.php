@@ -86,7 +86,7 @@ include("header.php");
         echo '<div>';
         echo '<img src="'.htmlspecialchars($voyage['image']).'" alt="'.htmlspecialchars($voyage['nom']).'">';
         echo '<h3>'.htmlspecialchars($voyage['nom']).'</h3>';
-        echo '<p class="prix-appel">À partir de : ' . $prix_a_partir_de . ' €</p>'; 
+        echo '<p class="prix-appel">À partir de : ' . $prix_a_partir_de . ' €...</p>'; 
         echo '</div>';
         echo '</a>';
     }

@@ -172,6 +172,7 @@
         "voyages": {
             "consultes": [],
             "achetes": []
-        }
+        },
+        "statut": "banni"
     }
 ]
