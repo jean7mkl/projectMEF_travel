@@ -29,7 +29,7 @@ $username = htmlspecialchars($_SESSION['login']);
            <h1>Bienvenue, <u><?php echo $username; ?></u> !</h1>
 
            <div class="compte2-buttons">
-               <a href="mes_voyages.php" class="compte2-button">
+               <a href="voyage.php" class="compte2-button">
                    <b>Mon prochain voyage</b>
                    <span>Consultez et gérez vos voyages en cours ou à venir.</span>
                </a>
