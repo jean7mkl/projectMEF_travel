@@ -3,66 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="theme-base" rel="stylesheet" href="assets/css/codeprojet.css">
 
     <title>Notre présentation</title>
-    <style>
-        .content2 {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 50px;
-        }
-        .text2 {
-            max-width: 60%;
-        }
-        .text2 h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        .text2 p {
-            font-size: 1.1em;
-            color: #444;
-        }
-        .btnpres {
-            display: inline-block;
-            background-color: #009fe3;
-            color: white;
-            padding: 12px 20px;
-            text-decoration: none;
-            font-size: 1em;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .image2-right {
-            max-width: 40%;
-        }
-        .image2-right img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .image2-bottom {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 50px;
-        }
-        .image2-bottom img {
-            width: 50%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .inspire2-text {
-            width: 45%;
-            font-size: 1.2em;
-            color: #444;
-        }
-        .inspire2-text h2 {
-            font-size: 2em;
-            color: #009fe3;
-            margin-bottom: 10px;
-        }
-    </style>
 </head>
 <body>
 

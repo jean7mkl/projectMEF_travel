@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-sleep(2); // ⏳ Simule une latence visible côté client
+sleep(2); //
 
 $data = json_decode(file_get_contents("php://input"), true);
 
