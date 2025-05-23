@@ -18,7 +18,7 @@ session_start();
 <body>
   <h1>🔒 Accès refusé</h1>
   <p>Votre compte a été suspendu.<br>
-     Si vous pensez qu’il s’agit d’une erreur, contactez l’administrateur.</p>
+     Si vous pensez qu’il s’agit d’une erreur, contactez l’administrateur : Romuald.Grignon@CY.fr</p>
   <p><a href="projet.php">← Retour à l’accueil</a></p>
 </body>
 </html>
