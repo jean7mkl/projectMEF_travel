@@ -1,27 +1,5 @@
 [
     {
-        "id": 1,
-        "login": "johndoe",
-        "mot_de_passe": "abc12345",
-        "role": "utilisateur",
-        "informations": {
-            "nom": "John Doe",
-            "email": "johndoe@email.com",
-            "telephone": "0601020304"
-        },
-        "voyages": {
-            "consultes": [
-                "Japon",
-                "Italie"
-            ],
-            "achetes": [
-                1001,
-                1002
-            ]
-        },
-        "statut": "vip"
-    },
-    {
         "id": 2,
         "login": "t.t",
         "mot_de_passe": "$2y$10$NUIRtJVMFEHU1\/FWl1phguwQqRLmfG4Ti9FLt9b.38PYAvsSCxP6S",

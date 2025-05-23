@@ -27,24 +27,19 @@
         }
     },
     {
-        "id": 1,
-        "login": "johndoe",
-        "mot_de_passe": "abc12345",
+        "id": 13,
+        "login": "john.doe",
+        "mot_de_passe": "$2y$10$DMGN2p0jRIRBEADvYTzsSO8YuI4T7wumoFJnWK5FPa3Jk5ffTS.uK",
         "role": "administrateur",
         "informations": {
-            "nom": "John Doe",
+            "nom": "Doe John",
             "email": "johndoe@email.com",
-            "telephone": "0601020304"
+            "telephone": "0601020304",
+            "sexe": "Homme"
         },
         "voyages": {
-            "consultes": [
-                "Japon",
-                "Italie"
-            ],
-            "achetes": [
-                1001,
-                1002
-            ]
+            "consultes": [],
+            "achetes": []
         },
         "statut": "vip"
     }
