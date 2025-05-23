@@ -9,7 +9,7 @@ if (!isset($data['id'], $data['login'], $data['email'], $data['role'])) {
     exit;
 }
 
-$fichier = 'utilisateurs.json';
+$fichier = 'voyageurs.json';
 $utilisateurs = json_decode(file_get_contents($fichier), true);
 $id = (int)$data['id'];
 $success = false;

@@ -4,7 +4,7 @@
  */
 function isUserBanned(int $idUtilisateur): bool
 {
-    $chemin = __DIR__ . '/utilisateurs.json';
+    $chemin = __DIR__ . '/voyageurs.json';
     if (! file_exists($chemin)) {
         return false;
     }

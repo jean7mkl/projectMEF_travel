@@ -12,7 +12,7 @@ $id_utilisateur = $_SESSION['id_utilisateur'];
 $message = "";
 
 // Recherche dans les deux fichiers
-$fichiers = ['utilisateurs.json', 'administrateur.json'];
+$fichiers = ['voyageurs.json', 'administrateur.json'];
 $utilisateur_actuel = null;
 $fichier_courant = null;
 

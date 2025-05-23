@@ -2,7 +2,7 @@
 include("verif_statut.php");
 session_start();
 
-$fichier = 'utilisateurs.json';
+$fichier = 'voyageurs.json';
 $utilisateurs = file_exists($fichier) ? json_decode(file_get_contents($fichier), true) : [];
 $message = "";
 

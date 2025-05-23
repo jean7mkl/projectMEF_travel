@@ -5,7 +5,7 @@ $donnees = json_decode(file_get_contents("php://input"), true);
 $user_id = (int)($donnees['user_id'] ?? 0);
 $action = $donnees['action'] ?? '';
 
-$fichier = 'utilisateurs.json';
+$fichier = 'voyageurs.json';
 $utilisateurs = file_exists($fichier) ? json_decode(file_get_contents($fichier), true) : [];
 $trouve = false;
 $nouveau_statut = '';

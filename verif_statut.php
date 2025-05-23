@@ -5,7 +5,7 @@ if (!isset($_SESSION['id_utilisateur'])) {
     exit(); // ou redirection vers la page de connexion
 }
 
-$fichier = 'utilisateurs.json';
+$fichier = 'voyageurs.json';
 if (!file_exists($fichier)) exit();
 
 $utilisateurs = json_decode(file_get_contents($fichier), true);

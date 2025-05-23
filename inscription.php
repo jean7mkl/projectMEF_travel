@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$fichier_utilisateurs = __DIR__ . '/utilisateurs.json';
+$fichier_utilisateurs = __DIR__ . '/voyageurs.json';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $required_fields = ['nom', 'prenom', 'sexe', 'email', 'telephone', 'mot_de_passe'];

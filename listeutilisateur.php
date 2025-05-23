@@ -1,6 +1,6 @@
 <?php
 // Chemin vers le fichier utilisateurs.json
-$fichier_utilisateurs = 'utilisateurs.json';
+$fichier_utilisateurs = 'voyageurs.json';
 
 // Charger le contenu du fichier
 $contenu = file_get_contents($fichier_utilisateurs);

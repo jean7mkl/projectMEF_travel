@@ -5,7 +5,7 @@ ob_start(); // Pour éviter les erreurs de redirection
 include 'header.php';
 include 'footer.php';
 
-$fichiers_utilisateurs = ['utilisateurs.json', 'administrateur.json'];
+$fichiers_utilisateurs = ['voyageurs.json', 'administrateur.json'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars(trim($_POST["email"]));
